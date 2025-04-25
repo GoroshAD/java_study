@@ -37,10 +37,15 @@ public class Company {
         for (Deal deal : deals) {
             shiftMoney(deal.getDebitChange());
             shiftMoney(-deal.getCreditChange());
+            System.out.println(deal.getComment());
         }
 
         int debitMinusCredit = debit - credit;
         payTaxes();
         return debitMinusCredit;
+    }
+
+    public String getTitle() {
+        return title;
     }
 }

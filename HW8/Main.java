@@ -20,6 +20,7 @@ public class Main {
                 new Expenditure("bowling", 100),
                 new Sale("mug", 200)
         };
-        company.applyDeals(deals);
+        int debitMinusCredit = company.applyDeals(deals);
+        System.out.println("Компания " + company.getTitle() + " после применения сделок оказалась в плюсе на момент старта уплаты налогов на " + debitMinusCredit + " руб.");
     }
 }

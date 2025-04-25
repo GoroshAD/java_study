@@ -18,4 +18,8 @@ public class Deal {
     public int getCreditChange() {
         return creditChange;
     }
+
+    public String getComment() {
+        return comment;
+    }
 }
