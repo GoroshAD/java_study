@@ -6,7 +6,7 @@ public class SmartLogger implements Logger {
     @Override
     public void log(String msg) {
         String s;
-        if (msg.contains("error")) {
+        if (msg.toLowerCase().contains("error")) {
             s = "ERROR";
         } else {
             s = "INFO";
