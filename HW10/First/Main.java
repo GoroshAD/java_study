@@ -16,18 +16,22 @@ public class Main {
             System.out.println(e.getMessage());
             return;
         }
-        while (true) {
-            System.out.println("Введите пароль или end:");
-            String input = scanner.next();
-            if (input.equals("end")) {
-                System.out.println("Программа завершена");
-                break;
+        try {
+            while (true) {
+                System.out.println("Введите пароль или end:");
+                String input = scanner.next();
+                if (input.equals("end")) {
+                    System.out.println("Программа завершена");
+                    break;
+                }
+                if (passwordChecker.verify(input)) {
+                    System.out.println("Подходит!");
+                } else {
+                    System.out.println("Не подходит!");
+                }
             }
-            if (passwordChecker.verify(input)) {
-                System.out.println("Подходит!");
-            } else {
-                System.out.println("Не подходит!");
-            }
+        } catch (IllegalStateException e) {
+            System.out.println(e.getMessage());
         }
     }
 }
