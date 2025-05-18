@@ -30,14 +30,15 @@ public class LinkedStack {
         if (isEmpty()) {
             return "EMPTY";
         }
-        String res = "";
+        StringBuilder res = new StringBuilder();
         Node start = tail;
         for (int i = 0; i < size - 1; ++i) {
-            res += start.getValue() + " -> ";
+            res.append(start.getValue());
+            res.append(" -> ");
             start = start.getPrev();
         }
-        res += start.getValue();
-        return res;
+        res.append(start.getValue());
+        return res.toString();
     }
 }
 
